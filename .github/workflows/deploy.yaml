@@ -63,5 +63,5 @@ jobs:
 #        uses: steebchen/kubectl@v2.0.0
         run: |
           kubectl apply -f ./k8s/test-deployment.yaml &&
-          kubectl apply -f ./test-service.yaml &&
-          kubectl apply -f ./test-ingress.yaml
+          kubectl apply -f ./k8s/test-service.yaml &&
+          kubectl apply -f ./k8s/test-ingress.yaml
