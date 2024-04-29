@@ -51,9 +51,11 @@ jobs:
           docker build -t cicd:latest . 
           docker tag cicd:latest 767398153316.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:latest
           docker push 767398153316.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:latest
-      - name: test-deployment
-        run: kubectl apply -f ./test-deployment.yaml
-      - name: test-service
-        run: kubectl apply -f ./test-service.yaml
-      - name: test-ingress
-        run: kubectl apply -f ./test-ingress.yaml
+      - name: kubectl apply
+        uses: steebchen/kubectl@v2.0.0
+        with:
+          command: apply -f ./test-deployment.yaml
+#      - name: test-service
+#        run: kubectl apply -f ./test-service.yaml
+#      - name: test-ingress
+#        run: kubectl apply -f ./test-ingress.yaml
