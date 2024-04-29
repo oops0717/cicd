@@ -49,7 +49,7 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         run: |
           docker build -t cicd:latest . 
-          docker tag cicd:latest 767398153316.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:$latest
+          docker tag cicd:latest 767398153316.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:latest
           docker push 767398153316.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:latest
       - name: test-deployment
         run: kubectl apply -f test-deployment.yaml
