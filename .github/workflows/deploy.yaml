@@ -62,7 +62,7 @@ jobs:
       - name: kubectl apply
         uses: steebchen/kubectl@v2.0.0
         with:
-          command: apply -f ./k8s/test-deployment1.yaml
+          command: apply -f ./k8s/test-deployment.yaml
 #      - name: test-service
 #        run: kubectl apply -f ./test-service.yaml
 #      - name: test-ingress
