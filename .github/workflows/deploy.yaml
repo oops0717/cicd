@@ -59,3 +59,6 @@ jobs:
           kubectl apply -f ./k8s/test-deployment.yaml &&
           kubectl apply -f ./k8s/test-service.yaml &&
           kubectl apply -f ./k8s/test-ingress.yaml
+      - name : result
+        run : echo http://$(kubectl get ingress/test-eks-backend-ingress -o jsonpath='{.status.loadBalancer.ingress[*].hostname}')/contents/aws
+
