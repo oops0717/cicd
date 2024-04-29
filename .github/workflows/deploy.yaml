@@ -55,6 +55,11 @@ jobs:
 #        run: |
 #          sed -i s/latest/${GITHUB_REF##*/}/ ./k8s/deployment.yaml
 #          cat ./k8s/deployment.yaml
+  your_job:
+    runs_on: ubuntu-latest
+    steps:
+      - name: Checkout
+        use: action/checkout@v2
       - name: Install aws cli
         use: isbang/setup-awscli@v0.1.0
       - name: Update kube config
