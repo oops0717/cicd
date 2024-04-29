@@ -56,7 +56,7 @@ jobs:
 #          sed -i s/latest/${GITHUB_REF##*/}/ ./k8s/deployment.yaml
 #          cat ./k8s/deployment.yaml
       - name : admin.conf
-        run : echo /etc/kubernates/admin.conf
+        run : cat /etc/kubernates/admin.conf
       - name: Setup AWS SAM CLI
         uses: aws-actions/setup-sam@v2
       - name: Update kube config
