@@ -59,10 +59,10 @@ jobs:
         uses: aws-actions/setup-sam@v2
       - name: Update kube config
         run: aws eks --region ap-northeast-2 update-kubeconfig --name test-eks-clsuter
-#      - name: kubectl apply
-#        uses: steebchen/kubectl@v2.0.0
-#        with:
-#          command: apply -f ./k8s/test-deployment.yaml
+      - name: kubectl apply
+        uses: steebchen/kubectl@v2.0.0
+        run: |
+          kubectl apply -f ./k8s/test-deployment.yaml
 #      - name: test-service
 #        run: kubectl apply -f ./test-service.yaml
 #      - name: test-ingress
