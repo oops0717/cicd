@@ -58,7 +58,7 @@ jobs:
       - name: Setup AWS SAM CLI
         uses: aws-actions/setup-sam@v2
       - name: Update kube config
-        run: aws eks --region ap-northeast-2 update-kubeconfig --name test-eks-clsuter
+        run: aws eks --region ap-northeast-2 update-kubeconfig --name test-eks-clsuter --profile cicd
       - name: Deploy to EKS
 #        uses: steebchen/kubectl@v2.0.0
         run: |
