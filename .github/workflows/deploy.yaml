@@ -62,8 +62,6 @@ jobs:
       - name: Deploy to EKS
 #        uses: steebchen/kubectl@v2.0.0
         run: |
-          kubectl apply -f ./k8s/test-deployment.yaml
-#      - name: test-service
-#        run: kubectl apply -f ./test-service.yaml
-#      - name: test-ingress
-#        run: kubectl apply -f ./test-ingress.yaml
+          kubectl apply -f ./k8s/test-deployment.yaml &&
+          kubectl apply -f ./test-service.yaml &&
+          kubectl apply -f ./test-ingress.yaml
