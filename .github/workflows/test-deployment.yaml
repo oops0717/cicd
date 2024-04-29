@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-eks-backend
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test-eks-backend
+  template:
+    metadata:
+      labels:
+        app: test-eks-backend
+    spec:
+      containers:
+        - name: test-eks-backend
+          image: 767398153316.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
