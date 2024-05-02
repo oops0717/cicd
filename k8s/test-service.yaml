@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: test-eks-backend
   annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: "/contents/aws"
+    alb.ingress.kubernetes.io/healthcheck-path: "/hello"
 spec:
   selector:
     app: test-eks-backend
